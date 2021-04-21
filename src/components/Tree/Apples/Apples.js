@@ -8,7 +8,14 @@ const Apples = props => {
   return (
     <div className={styles['apples-container']}>
       {props.apples.map((apple, index) => (
-        <Apple key={index} left={apple.coordX} top={apple.coordY} />
+        <Apple
+          key={apple.id}
+          id={apple.id}
+          left={apple.coordX}
+          top={apple.coordY}
+          didFall={apple.didFall}
+          fallingDelay={apple.fallingDelay}
+        />
       ))}
     </div>
   );

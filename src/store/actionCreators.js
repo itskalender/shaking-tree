@@ -27,3 +27,18 @@ export const startShakingTheTree = () => {
     }, 3000);
   };
 };
+
+export const collectTheApples = id => {
+  return {
+    type: actionTypes.COLLECT_THE_APPLES,
+    id: id,
+  };
+};
+
+export const startCollectingTheApples = (id, collectingDelay) => {
+  return dispatch => {
+    setTimeout(() => {
+      dispatch(collectTheApples(id));
+    }, collectingDelay * 1000);
+  };
+};
