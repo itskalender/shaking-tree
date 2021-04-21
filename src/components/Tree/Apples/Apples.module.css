@@ -1,0 +1,8 @@
+.apples-container {
+  position: absolute;
+  width: 80%;
+  height: 12rem;
+  left: 10%;
+  top: 8.5rem;
+  color: #fff;
+}
