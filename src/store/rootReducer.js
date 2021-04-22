@@ -3,17 +3,22 @@ import * as actionTypes from './actionTypes';
 const initialState = {
   // prettier-ignore
   apples: [
-    { id: 'apple1', coordX: '10px', coordY: '10px', fallingDelay: 1, didFall: false },
-    { id: 'apple2', coordX: '100px', coordY: '15px', fallingDelay: 2, didFall: false },
-    { id: 'apple3', coordX: '150px', coordY: '20px', fallingDelay: 3, didFall: false },
-    { id: 'apple4', coordX: '180px', coordY: '70px', fallingDelay: 4, didFall: false },
-    { id: 'apple5', coordX: '320px', coordY: '120px', fallingDelay: 5, didFall: false },
-    { id: 'apple6', coordX: '25px', coordY: '80px', fallingDelay: 6, didFall: false },
-    { id: 'apple7', coordX: '300px', coordY: '10px', fallingDelay: 7, didFall: false },
-    { id: 'apple8', coordX: '390px', coordY: '60px', fallingDelay: 8, didFall: false },
-    { id: 'apple9', coordX: '400px', coordY: '100px', fallingDelay: 9, didFall: false },
-    { id: 'apple10', coordX: '350px', coordY: '120px', fallingDelay: 10, didFall: false },
+    { id: 'apple1', coordX: '45%', coordY: '5%', fallingDelay: 1, didFall: false },
+    { id: 'apple2', coordX: '70%', coordY: '0%', fallingDelay: 2, didFall: false },
+    { id: 'apple3', coordX: '95%', coordY: '40%', fallingDelay: 3, didFall: false },
+    { id: 'apple4', coordX: '75%', coordY: '80%', fallingDelay: 4, didFall: false },
+    { id: 'apple5', coordX: '40%', coordY: '45%', fallingDelay: 5, didFall: false },
+    { id: 'apple6', coordX: '90%', coordY: '90%', fallingDelay: 3, didFall: false },
+    { id: 'apple7', coordX: '5%', coordY: '50%', fallingDelay: 4, didFall: false },
+    { id: 'apple8', coordX: '60%', coordY: '40%', fallingDelay: 3, didFall: false },
+    { id: 'apple9', coordX: '10%', coordY: '15%', fallingDelay: 2, didFall: false },
+    { id: 'apple10', coordX: '10%', coordY: '80%', fallingDelay: 5, didFall: false },
+    { id: 'apple11', coordX: '60%', coordY: '10%', fallingDelay: 4, didFall: false },
+    { id: 'apple12', coordX: '20%', coordY: '35%', fallingDelay: 3, didFall: false },
+    { id: 'apple13', coordX: '35%', coordY: '75%', fallingDelay: 1, didFall: false },
+    { id: 'apple14', coordX: '30%', coordY: '15%', fallingDelay: 1, didFall: false },
   ],
+  applesInBasket: [],
   isShaking: false,
 };
 
@@ -80,13 +85,18 @@ const rootReducer = (state = initialState, action) => {
       const updatedIndex = copiedApples.findIndex(
         apple => apple.id === action.id && apple.didFall === true
       );
-      console.log(updatedIndex);
+      // console.log(updatedIndex);
       copiedApples.splice(updatedIndex, 1);
-      console.log(copiedApples);
+      // console.log(copiedApples);
+
+      // Updating Apples in Basket
+      const updatedApplesInBasket = [...state.applesInBasket];
+      updatedApplesInBasket.push(action.id);
 
       return {
         ...state,
         apples: copiedApples,
+        applesInBasket: updatedApplesInBasket,
       };
 
     default:

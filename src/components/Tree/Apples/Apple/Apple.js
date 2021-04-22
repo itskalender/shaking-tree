@@ -10,12 +10,9 @@ const FALLING_DURATION = 0.8;
 const WAITING_TIME = 1;
 
 class Apple extends Component {
+  // I did check this equality in concern of avoiding loop.
   shouldComponentUpdate(nextProps, nextState) {
-    // console.log(this.props);
-    // console.log(nextProps);
-    const check = this.props.didFall !== nextProps.didFall;
-    // console.log(check);
-    return check;
+    return this.props.didFall !== nextProps.didFall;
   }
 
   // Eğer elma düşmeye başladıysa event kaynağı
@@ -39,6 +36,8 @@ class Apple extends Component {
           left: this.props.left,
           top: this.props.top,
           animationDelay: `${this.props.fallingDelay}s`,
+          position: this.props.inBasket ? 'static' : 'absolute',
+          // margin: this.props.inBasket ? '0rem' : '0.5rem',
         }}
       />
     );

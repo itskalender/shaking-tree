@@ -10,8 +10,8 @@ const Tree = props => {
 
   return (
     <div className={`${styles['tree-container']} ${animate}`}>
-      <img src={tree} className={styles.tree} alt="tree" />
       <Apples apples={props.apples} />
+      <img src={tree} className={styles.tree} alt="tree" />
     </div>
   );
 };

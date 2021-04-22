@@ -1,7 +1,6 @@
 .tree-container {
   position: relative;
   width: 70%;
-  min-width: 33.6rem;
   height: 100vh;
   margin: auto;
 }
@@ -15,7 +14,7 @@
   animation-name: shaking;
   animation-duration: 1s;
   animation-iteration-count: 3;
-  /* 3 veya infinite eşit. Class 3s kaldığı için ikiside kullanılabilir. */
+  /* 3 veya infinite eşit. Animation class'ı 3s kaldığı için ikiside kullanılabilir. */
 }
 
 @media (min-width: 768px) {

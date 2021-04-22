@@ -1,8 +1,66 @@
 .apples-container {
   position: absolute;
   width: 80%;
-  height: 12rem;
+  height: 10%;
   left: 10%;
-  top: 8.5rem;
+  top: 35%;
   color: #fff;
+}
+
+@media (min-width: 350px) and (max-width: 400px) {
+  .apples-container {
+    top: 36%;
+    height: 11%;
+  }
+}
+@media (min-width: 401px) and (max-width: 450px) {
+  .apples-container {
+    top: 34%;
+    height: 12%;
+  }
+}
+@media (min-width: 451px) and (max-width: 500px) {
+  .apples-container {
+    top: 32%;
+    height: 13%;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 550px) {
+  .apples-container {
+    top: 30%;
+    height: 15%;
+  }
+}
+
+@media (min-width: 551px) and (max-width: 600px) {
+  .apples-container {
+    top: 28%;
+    height: 16%;
+  }
+}
+@media (min-width: 601px) and (max-width: 650px) {
+  .apples-container {
+    top: 26%;
+    height: 19%;
+  }
+}
+@media (min-width: 651px) and (max-width: 700px) {
+  .apples-container {
+    top: 23%;
+    height: 21%;
+  }
+}
+@media (min-width: 701px) and (max-width: 750px) {
+  .apples-container {
+    top: 22%;
+    height: 22%;
+  }
+}
+
+@media (min-width: 751px) {
+  .apples-container {
+    top: 20%;
+    height: 24%;
+  }
 }

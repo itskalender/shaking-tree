@@ -12,7 +12,7 @@ class TreeShaking extends Component {
     return (
       <React.Fragment>
         <Tree apples={this.props.apples} isShaking={this.props.isShaking} />
-        <Basket />
+        <Basket apples={this.props.applesInBasket} />
         <Button onClick={this.props.onClick} />
       </React.Fragment>
     );
@@ -22,6 +22,7 @@ class TreeShaking extends Component {
 const mapStateToProps = state => {
   return {
     apples: state.apples,
+    applesInBasket: state.applesInBasket,
     isShaking: state.isShaking,
   };
 };
