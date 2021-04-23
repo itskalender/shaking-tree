@@ -7,7 +7,7 @@ import styles from './Apples.module.css';
 const Apples = props => {
   return (
     <div className={styles['apples-container']}>
-      {props.apples.map((apple, index) => (
+      {props.apples.map(apple => (
         <Apple
           key={apple.id}
           id={apple.id}

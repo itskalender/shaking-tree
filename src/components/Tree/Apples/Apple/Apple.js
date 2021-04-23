@@ -6,7 +6,7 @@ import * as actions from '../../../../store/actionCreators';
 
 import styles from './Apple.module.css';
 
-const FALLING_DURATION = 0.8;
+const FALLING_DURATION = 0.6;
 const WAITING_TIME = 1;
 
 class Apple extends Component {
@@ -25,7 +25,7 @@ class Apple extends Component {
   }
 
   render() {
-    const didFall = this.props.didFall ? styles.animation : '';
+    const didFall = this.props.didFall ? styles['falling-animation'] : '';
 
     return (
       <img
@@ -37,7 +37,6 @@ class Apple extends Component {
           top: this.props.top,
           animationDelay: `${this.props.fallingDelay}s`,
           position: this.props.inBasket ? 'static' : 'absolute',
-          // margin: this.props.inBasket ? '0rem' : '0.5rem',
         }}
       />
     );

@@ -1,0 +1,30 @@
+.tree-shaking {
+  position: relative;
+  width: 70%;
+  margin: auto;
+  margin-top: 30%;
+}
+
+@media (min-width: 450px) {
+  .tree-shaking {
+    margin-top: 20%;
+  }
+}
+
+@media (min-width: 600px) {
+  .tree-shaking {
+    margin-top: 10%;
+  }
+}
+
+@media (min-width: 750px) {
+  .tree-shaking {
+    margin-top: 4%;
+  }
+}
+
+@media (min-width: 850px) {
+  .tree-shaking {
+    width: 37.1875rem;
+  }
+}

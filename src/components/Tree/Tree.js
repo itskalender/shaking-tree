@@ -6,10 +6,9 @@ import Apples from './Apples/Apples';
 import styles from './Tree.module.css';
 
 const Tree = props => {
-  const animate = props.isShaking ? styles.animation : '';
-
+  const shakingAnimation = props.isShaking ? styles['shaking-animation'] : '';
   return (
-    <div className={`${styles['tree-container']} ${animate}`}>
+    <div className={`${styles['tree-container']} ${shakingAnimation}`}>
       <Apples apples={props.apples} />
       <img src={tree} className={styles.tree} alt="tree" />
     </div>
