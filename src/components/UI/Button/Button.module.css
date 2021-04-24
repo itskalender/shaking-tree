@@ -80,14 +80,17 @@
 }
 
 @media (min-width: 450px) {
+  .button-container:hover {
+    border-bottom: 2px solid #4b4b4b;
+  }
   .button-container__button {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 }
 
 @media (min-width: 600px) {
   .button-container__button {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
   .button-container__tree {
     margin-left: 0.5rem;
@@ -95,16 +98,16 @@
 }
 
 @media (min-width: 750px) {
-  .button-container__button {
-    font-size: 0.9rem;
-  }
   .button-container:hover {
     border-bottom: 3px solid #4b4b4b;
+  }
+  .button-container__button {
+    font-size: 1.1rem;
   }
 }
 
 @media (min-width: 850px) {
   .button-container__button {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 }

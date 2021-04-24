@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import { FALLING_DURATION, WAITING_TIME } from '../../../../shared/config'; // I use these times(s) for calculating collecting time for each of the apples.
 import apple from '../../../../assets/images/apple.svg';
 import * as actions from '../../../../store/actionCreators';
 
 import styles from './Apple.module.css';
-
-// I use these times(s) for calculating collecting time for each of the apples.
-const FALLING_DURATION = 0.6;
-const WAITING_TIME = 1;
 
 class Apple extends Component {
   // I did check this equality in concern of avoiding infinite loop.

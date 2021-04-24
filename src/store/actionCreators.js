@@ -1,4 +1,4 @@
-// I use actionCreators with react-thunk to execute asynchronous code.
+// I use actionCreators with react-thunk to execute asynchronous code
 
 import * as actionTypes from './actionTypes';
 
