@@ -13,7 +13,10 @@ class TreeShaking extends Component {
   render() {
     return (
       <div className={styles['tree-shaking']}>
-        <Tree apples={this.props.apples} isShaking={this.props.isShaking} />
+        <Tree
+          apples={this.props.applesOnTree}
+          isShaking={this.props.isShaking}
+        />
         <Basket apples={this.props.applesInBasket} />
         <Button onClick={this.props.onClick} />
       </div>
@@ -23,7 +26,7 @@ class TreeShaking extends Component {
 
 const mapStateToProps = state => {
   return {
-    apples: state.apples,
+    applesOnTree: state.applesOnTree,
     applesInBasket: state.applesInBasket,
     isShaking: state.isShaking,
   };

@@ -5,6 +5,7 @@ import tree from '../../../assets/images/tree.svg';
 import styles from './Button.module.css';
 
 class Button extends Component {
+  // I used component life cycle hooks so I would be able to select elements and use shaking effect for icon-tree.
   componentDidMount() {
     const btnContainer = document.querySelector(
       `.${styles['button-container']}`
@@ -24,7 +25,7 @@ class Button extends Component {
     return (
       <div className={styles['button-container']} onClick={this.props.onClick}>
         <button type="button" className={styles['button-container__button']}>
-          Shake the
+          <span>Shake the </span>
         </button>
         <img
           src={tree}

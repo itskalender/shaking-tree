@@ -2,7 +2,7 @@
   width: 100%;
 }
 
-.tree {
+.tree-container__tree {
   width: 100%;
 }
 
@@ -10,7 +10,6 @@
   animation-name: shaking;
   animation-duration: 1s;
   animation-iteration-count: 3;
-  /* 3 veya infinite eşit. Animation class'ı 3s kaldığı için ikiside kullanılabilir. */
 }
 
 @keyframes shaking {

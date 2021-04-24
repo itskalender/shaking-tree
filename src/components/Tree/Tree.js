@@ -6,11 +6,11 @@ import Apples from './Apples/Apples';
 import styles from './Tree.module.css';
 
 const Tree = props => {
-  const shakingAnimation = props.isShaking ? styles['shaking-animation'] : '';
+  const shakingAnimation = props.isShaking ? styles['shaking-animation'] : ''; // I generally tried to use dinamic styling via classes and avoid to use inline-styling.
   return (
     <div className={`${styles['tree-container']} ${shakingAnimation}`}>
       <Apples apples={props.apples} />
-      <img src={tree} className={styles.tree} alt="tree" />
+      <img src={tree} className={styles['tree-container__tree']} alt="tree" />
     </div>
   );
 };

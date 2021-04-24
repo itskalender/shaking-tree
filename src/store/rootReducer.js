@@ -2,7 +2,7 @@ import * as actionTypes from './actionTypes';
 
 const initialState = {
   // prettier-ignore
-  apples: [
+  applesOnTree: [
     { id: 'apple1', coordX: '45%', coordY: '5%', fallingDelay: 1, didFall: false },
     { id: 'apple2', coordX: '70%', coordY: '0%', fallingDelay: 2, didFall: false },
     { id: 'apple3', coordX: '95%', coordY: '40%', fallingDelay: 3, didFall: false },
@@ -35,67 +35,66 @@ const rootReducer = (state = initialState, action) => {
         isShaking: false,
       };
     case actionTypes.DROP_THE_APPLES:
-      // Apples on Tree
-      const applesOnTree = state.apples.filter(
+      // The datas of apples that are on the tree
+      const applesOnTree = state.applesOnTree.filter(
         apple => apple.didFall === false
       );
 
-      // Apple Ids on Tree
-      const appleIds = applesOnTree.map(apple => apple.id);
+      // The Ids of apples that are on tree
+      const appleIdsOnTree = applesOnTree.map(apple => apple.id);
 
-      // Number of Apples on Tree
+      // Number of Apples on the tree
       const appleAmountOnTree = applesOnTree.length;
+      if (appleAmountOnTree === 0) return { ...state };
 
-      // Will be Dropped Apple Amount
+      // Will be dropped apple amount (The number is going to be between 1 and the amount of apples on the tree).
       const droppedAppleAmount =
         Math.floor(Math.random() * appleAmountOnTree) + 1;
-      // console.log(droppedAppleAmount);
 
-      // Will be Dropped Apple Ids
-      const droppedAppleIds = appleIds.splice(0, droppedAppleAmount);
-      // console.log(droppedAppleIds);
+      // Will be Dropped Apple Ids (The apples are going to be the first decided amount in the 'applesOnTree' array).
+      const droppedAppleIds = appleIdsOnTree.splice(0, droppedAppleAmount);
 
       // Immutable Updating
-      const copiedApplesData = [...state.apples];
+      const updatedApplesOnTree = [...state.applesOnTree];
 
-      // // Finding indexes in state.apples
-      const appleGeneralIndexes = [];
+      // // Finding indexes of dropped apples in 'applesOnTree' array
+      const indexesOfDroppedApples = [];
       for (let id of droppedAppleIds) {
-        appleGeneralIndexes.push(
-          copiedApplesData.findIndex(apple => apple.id === id)
+        indexesOfDroppedApples.push(
+          updatedApplesOnTree.findIndex(apple => apple.id === id)
         );
       }
-      // console.log(appleGeneralIndexes);
 
-      // // Updating depend on indexes
-      for (let index of appleGeneralIndexes) {
-        const copiedAppleData = { ...copiedApplesData[index] };
-        copiedAppleData.didFall = true;
-        copiedApplesData[index] = copiedAppleData;
+      // // Updating the dropped apples depending on indexes
+      for (let index of indexesOfDroppedApples) {
+        const updatedApple = { ...updatedApplesOnTree[index] };
+        updatedApple.didFall = true;
+        updatedApplesOnTree[index] = updatedApple;
       }
-
-      // console.log(copiedApplesData);
 
       return {
         ...state,
-        apples: copiedApplesData,
+        applesOnTree: updatedApplesOnTree,
       };
+
     case actionTypes.COLLECT_THE_APPLES:
-      const copiedApples = [...state.apples];
-      const updatedIndex = copiedApples.findIndex(
+      const updatedApplesOnTreeData = [...state.applesOnTree];
+
+      // Finding out which apple should be in the basket
+      const updatedIndex = updatedApplesOnTreeData.findIndex(
         apple => apple.id === action.id && apple.didFall === true
       );
-      // console.log(updatedIndex);
-      copiedApples.splice(updatedIndex, 1);
-      // console.log(copiedApples);
 
-      // Updating Apples in Basket
+      // Collecting the apple from the ground
+      updatedApplesOnTreeData.splice(updatedIndex, 1);
+
+      // Updating the 'applesInBasket' array
       const updatedApplesInBasket = [...state.applesInBasket];
       updatedApplesInBasket.push(action.id);
 
       return {
         ...state,
-        apples: copiedApples,
+        applesOnTree: updatedApplesOnTreeData,
         applesInBasket: updatedApplesInBasket,
       };
 

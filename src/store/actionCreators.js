@@ -1,3 +1,5 @@
+// I use actionCreators with react-thunk to execute asynchronous code.
+
 import * as actionTypes from './actionTypes';
 
 export const shakeTheTree = () => {
