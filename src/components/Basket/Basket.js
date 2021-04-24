@@ -1,6 +1,6 @@
 import React from 'react';
 
-import basket from '../../assets/images/basket-2.svg'; //
+import basket from '../../assets/images/basket.svg'; //
 import Apple from '../Tree/Apples/Apple/Apple';
 
 import styles from './Basket.module.css';
