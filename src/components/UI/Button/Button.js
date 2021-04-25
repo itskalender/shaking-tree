@@ -5,6 +5,7 @@ import tree from '../../../assets/images/tree.svg';
 import styles from './Button.module.css';
 
 const Button = props => {
+  // I implemented this handler for both mouse-enter and mouse-leave event with the power of toggle method so I was able to avoid code dublication.
   const mouseEventHandler = e => {
     const btnContainer = e.target.closest(`.${styles['button-container']}`);
     const iconTree = btnContainer.querySelector(

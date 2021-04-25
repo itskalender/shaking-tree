@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { FALLING_DURATION, WAITING_DURATION } from '../../../../shared/config'; // I use these times(s) for calculating collecting delay time for each apple
+import { FALLING_DURATION, WAITING_DURATION } from '../../../../shared/config'; // I use these times for calculating the 'collectingDelay' for each apple
 import apple from '../../../../assets/images/apple.svg';
 import * as actions from '../../../../store/actionCreators';
 
