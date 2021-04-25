@@ -2,4 +2,4 @@
 
 ### Demo
 
-- [Here]() you can find the final version of this project.
+- [Here](https://tree-shaking.netlify.app/) you can find the final version of this project.
