@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { FALLING_DURATION, WAITING_DURATION } from '../../../../shared/config'; // I use these times(s) for calculating collecting delay time for each of the apples.
+import { FALLING_DURATION, WAITING_DURATION } from '../../../../shared/config'; // I use these times(s) for calculating collecting delay time for each apple
 import apple from '../../../../assets/images/apple.svg';
 import * as actions from '../../../../store/actionCreators';
 
 import styles from './Apple.module.css';
 
 class Apple extends Component {
-  // I did check this equality in concern of avoiding infinite loop.
+  // I did check this equality to prevent an infinite loop
   shouldComponentUpdate(nextProps, nextState) {
     return this.props.didFall !== nextProps.didFall;
   }
 
-  // onFall event happens whenever one of the apples has 'true' value for didFall property. In actionCreators, I use the 'id' and 'collectingDelay' for fading the apples out asynchronously.
+  // onFall event happens whenever one of the apples has 'true' value for didFall property. In actionCreators, I use the 'id' and 'collectingDelay' in an asynchronous way for removing the apples from the ground and putting them into the basket
   componentDidUpdate() {
     const collectingDelay =
       this.props.fallingDelay + FALLING_DURATION + WAITING_DURATION;
@@ -35,7 +35,7 @@ class Apple extends Component {
           top: this.props.top,
           animationDuration: `${FALLING_DURATION}s`,
           animationDelay: `${this.props.fallingDelay}s`,
-          position: this.props.inBasket ? 'static' : 'absolute', // I implemeted this for positioning the apples which are in basket easily.
+          position: this.props.inBasket ? 'static' : 'absolute', // I implemented this for positioning the apples in basket easily.
         }}
       />
     );

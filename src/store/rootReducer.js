@@ -86,7 +86,7 @@ const rootReducer = (state = initialState, action) => {
         apple => apple.id === action.id && apple.didFall === true
       );
 
-      // Collecting the apple from the ground
+      // Removing the apple from the 'applesOnTree' array
       updatedApplesOnTreeData.splice(updatedIndex, 1);
 
       // Updating the 'applesInBasket' array
