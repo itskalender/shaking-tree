@@ -13,7 +13,7 @@
 }
 
 .button-container:hover {
-  border-bottom: 1.5px solid #4b4b4b;
+  border-bottom: 1.5px solid #047004;
 }
 
 .button-container__button {
@@ -81,7 +81,7 @@
 
 @media (min-width: 450px) {
   .button-container:hover {
-    border-bottom: 2px solid #4b4b4b;
+    border-bottom: 2px solid #047004;
   }
   .button-container__button {
     font-size: 0.8rem;
@@ -99,7 +99,7 @@
 
 @media (min-width: 750px) {
   .button-container:hover {
-    border-bottom: 3px solid #4b4b4b;
+    border-bottom: 3px solid #047004;
   }
   .button-container__button {
     font-size: 1.1rem;

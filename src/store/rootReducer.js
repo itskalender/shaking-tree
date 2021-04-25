@@ -11,9 +11,9 @@ const initialState = {
     { id: getAppleId(), coordX: '40%', coordY: '45%', fallingDelay: getFallingDelay(), didFall: false },
     { id: getAppleId(), coordX: '90%', coordY: '90%', fallingDelay: getFallingDelay(), didFall: false },
     { id: getAppleId(), coordX: '5%', coordY: '50%', fallingDelay: getFallingDelay(), didFall: false },
-    { id: getAppleId(), coordX: '60%', coordY: '40%', fallingDelay: getFallingDelay(), didFall: false },
+    { id: getAppleId(), coordX: '56%', coordY: '40%', fallingDelay: getFallingDelay(), didFall: false },
     { id: getAppleId(), coordX: '10%', coordY: '15%', fallingDelay: getFallingDelay(), didFall: false },
-    { id: getAppleId(), coordX: '10%', coordY: '80%', fallingDelay: getFallingDelay(), didFall: false },
+    { id: getAppleId(), coordX: '15%', coordY: '80%', fallingDelay: getFallingDelay(), didFall: false },
     { id: getAppleId(), coordX: '60%', coordY: '10%', fallingDelay: getFallingDelay(), didFall: false },
     { id: getAppleId(), coordX: '20%', coordY: '35%', fallingDelay: getFallingDelay(), didFall: false },
     { id: getAppleId(), coordX: '35%', coordY: '75%', fallingDelay: getFallingDelay(), didFall: false },
@@ -52,7 +52,7 @@ const rootReducer = (state = initialState, action) => {
       const droppedAppleAmount =
         Math.floor(Math.random() * appleAmountOnTree) + 1;
 
-      // Will be Dropped Apple Ids (The apples are going to be the first decided amount in the 'applesOnTree' array)
+      // Will be Dropped Apple Ids (The apples are going to be the first calculated amount in the 'applesOnTree' array)
       const droppedAppleIds = appleIdsOnTree.splice(0, droppedAppleAmount);
 
       // Immutable Updating

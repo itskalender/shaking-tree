@@ -1,2 +1,2 @@
-export const FALLING_DURATION = 0.6;
-export const WAITING_TIME = 1;
+export const FALLING_DURATION = 0.5;
+export const WAITING_DURATION = 1;

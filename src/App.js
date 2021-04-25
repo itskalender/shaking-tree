@@ -1,11 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import TreeShaking from './containers/TreeShaking/TreeShaking';
 
-class App extends Component {
-  render() {
-    return <TreeShaking />;
-  }
-}
+const App = () => {
+  return <TreeShaking />;
+};
 
 export default App;
