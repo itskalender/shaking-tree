@@ -39,6 +39,7 @@
 @media (max-width: 767px) and (min-height: 800px) {
   .tree-shaking {
     margin-top: 70%;
+    width: 62%;
   }
 }
 

@@ -21,7 +21,7 @@
   border: 0;
   outline: none;
   cursor: pointer;
-  font-size: 0.55rem;
+  font-size: 0.45rem;
   font-family: 'Nunito', sans-serif;
   letter-spacing: 0.2px;
   font-weight: bold;
@@ -79,6 +79,24 @@
   }
 }
 
+@media (min-width: 320px) {
+  .button-container:hover {
+    border-bottom: 2px solid #047004;
+  }
+  .button-container__button {
+    font-size: 0.55rem;
+  }
+}
+
+@media (min-width: 360px) {
+  .button-container:hover {
+    border-bottom: 2px solid #047004;
+  }
+  .button-container__button {
+    font-size: 0.65rem;
+  }
+}
+
 @media (min-width: 450px) {
   .button-container:hover {
     border-bottom: 2px solid #047004;
@@ -102,19 +120,22 @@
     border-bottom: 3px solid #047004;
   }
   .button-container__button {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 }
 
 @media (min-width: 850px) {
   .button-container__button {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 }
 
 @media (max-width: 767px) and (min-height: 800px) {
   .button-container {
     width: 40%;
+  }
+  .button-container__button {
+    font-size: 0.75rem;
   }
 }
 
@@ -141,6 +162,6 @@
     width: 40%;
   }
   .button-container__button {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
