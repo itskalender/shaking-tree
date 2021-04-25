@@ -2,12 +2,12 @@
   position: relative;
   width: 70%;
   margin: auto;
-  margin-top: 50%;
+  margin-top: 60%;
 }
 
 @media (min-width: 450px) {
   .tree-shaking {
-    margin-top: 20%;
+    margin-top: 25%;
   }
 }
 
@@ -26,5 +26,17 @@
 @media (min-width: 850px) {
   .tree-shaking {
     width: 37.1875rem;
+  }
+}
+
+@media (max-width: 767px) and (min-height: 800px) {
+  .tree-shaking {
+    margin-top: 70%;
+  }
+}
+
+@media (min-width: 768px) and (min-height: 800px) {
+  .tree-shaking {
+    margin-top: 30%;
   }
 }
